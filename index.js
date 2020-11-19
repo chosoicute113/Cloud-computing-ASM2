@@ -4,7 +4,7 @@ $(document).on("click","#btn_register",showRegistry)
 
 function showRegistry(){
     var message;
-    if($("#input_password2").val() != $("#input_password1").val()){
+    if($("#input_password2").val() != $("#input_password").val()){
         $("#showError").text("Wrong password");
         return;
     }
@@ -14,6 +14,7 @@ function showRegistry(){
     message += $("#input_phone").val()+"\n";
     message += $("#input_dob").val()+"\n";
     message += $("#input_age").val()+"\n";
-
+    
+    location.href="login.html";
     alert(message);
 }
