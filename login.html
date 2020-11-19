@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Login form</title>
+    </head>
+
+    <body>
+        <form id="frm_login">
+            <div id="showError"></div>
+            <table>
+                <tr>
+                    <td>Username</td>
+                    <td><input type="email" id="input_email"required></td>
+                </tr>
+                <tr>
+                    <td>Password</td>
+                    <td><input type="password" id="input_password" minlength="6" maxlength="20"></td>
+                </tr>
+                <tr>
+                    <td><input type="submit" id="btn_submit" value="Login"></td>
+                </tr>
+            </table>
+            <div>
+                No account? You can register <a href="register.html">here</a>.
+            </div>
+        </form>
+        <script src="jsquery.js"></script>
+        <script src="index.js"></script>
+    </body>
+</html>
