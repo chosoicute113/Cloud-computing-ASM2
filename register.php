@@ -20,7 +20,7 @@ if($db)
 	age int)");
 	if(isset($username) && isset($password) && isset($fullname))
 	{
-		pg_query("INSERT INTO user_registered VALUES('$username', '$password','$fullname','$phone', $birthday, $age)");
+		pg_query("INSERT INTO user_registered VALUES('$username', '$password','$fullname','$phone', '$birthday', $age)");
 		$success = 1;
 	}
 }
