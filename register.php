@@ -3,7 +3,7 @@ $username = $_POST['username'];
 $password = $_POST['password'];
 $fullname = password_hash($_POST['fullname'], PASSWORD_DEFAULT);
 $phone = $_POST['phone'];
-$birthday = new DateTime($_POST['birthday']);
+$birthday =$_POST['birthday'];
 $age = intval($_POST['age']);
 $success =0;
 include ("database.php");
@@ -18,7 +18,7 @@ if($db)
 	phone text,
 	birthdate date,
 	age int)");
-	$db_add = "insert into user_registered values('$username', '$password','$fullname','$phone',$birthday,$age)";
+	$db_add = "INSERT INTO user_registered VALUES('$username', '$password','$fullname','$phone',$birthday,$age)";
 	if(isset($username) && isset($password) && isset($fullname))
 	{
 		pg_query($db_add);
