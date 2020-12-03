@@ -5,7 +5,7 @@ $fullname = password_hash($_POST['fullname'], PASSWORD_DEFAULT);
 $phone = $_POST['phone'];
 $birthday =$_POST['birthday'];
 $age = intval($_POST['age']);
-$success =0;
+$success =false;
 include ("database.php");
 $db = getDb();
 
@@ -20,8 +20,7 @@ if($db)
 	age int)");
 	if(isset($username) && isset($password) && isset($fullname))
 	{
-		pg_query("INSERT INTO user_registered VALUES('$username', '$password','$fullname','$phone', '$birthday', $age)");
-		$success = 1;
+		$success = pg_query("INSERT INTO user_registered VALUES('$username', '$password','$fullname','$phone', '$birthday', $age)");
 	}
 }
 echo json_encode(array('success' => $success));
