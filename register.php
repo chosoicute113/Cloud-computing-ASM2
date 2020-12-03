@@ -6,7 +6,7 @@ $phone = $_POST['phone'];
 $birthday = $_POST['birthday'];
 $age = $_POST['age'];
 
-include ('database.php');
+include ("database.php");
 $db = getDb();
 
 if($db)
@@ -24,4 +24,9 @@ if($db)
 	)";
 	pg_query($db_adD);
 }
+else{
+		echo " Fail at:<br>";
+		echo pg_errormessage($db);
+		die("Connection failed");
+	}
 ?>
