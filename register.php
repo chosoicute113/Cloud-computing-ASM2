@@ -18,8 +18,7 @@ if($db)
 	phone text,
 	birthdate date,
 	age int)");
-	$db_add = "insert into user_registered values(
-	'$username', '$password','$fullname','$phone',$birthday,$age)";
+	$db_add = "insert into user_registered values('$username', '$password','$fullname','$phone',$birthday,$age)";
 	if(isset($username) && isset($password) && isset($fullname))
 	{
 		pg_query($db_add);
