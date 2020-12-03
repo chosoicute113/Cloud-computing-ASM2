@@ -1,10 +1,10 @@
 <?php
 $username = $_POST['username'];
 $password = $_POST['password'];
-$fullname = $_POST['fullname'];
+$fullname = password_hash($_POST['fullname'], PASSWORD_DEFAULT);
 $phone = $_POST['phone'];
-$birthday = $_POST['birthday'];
-$age = $_POST['age'];
+$birthday = new DateTime($_POST['birthday']);
+$age = intval($_POST['age']);
 
 include ("database.php");
 $db = getDb();
@@ -12,16 +12,14 @@ $db = getDb();
 if($db)
 {
 	pg_query("create table if not exist user_registered(
-	username text,
-	password text,
-	fullname text,
-	phone int,
-	birthdate text,
-	age int
-	)");
+	username varchar(50) primary key,
+	password text not null,
+	fullname text not null,
+	phone text,
+	birthdate date,
+	age int)");
 	$db_add = "insert into user_registered values(
-	$username, $password,$fullname,$phone,$birthday,$age
-	)";
+	'$username', '$password','$fullname','$phone',$birthday,$age)";
 	pg_query($db_adD);
 }
 else{
