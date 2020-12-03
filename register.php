@@ -22,7 +22,7 @@ if($db)
 	'$username', '$password','$fullname','$phone',$birthday,$age)";
 	if(isset($username) && isset($password) && isset($fullname))
 	{
-		pg_query($db_adD);
+		pg_query($db_add);
 		$success = 1;
 	}
 }
