@@ -6,7 +6,7 @@ $phone = $_POST['phone'];
 $birthday =$_POST['birthday'];
 $age = intval($_POST['age']);
 $success =false;
-include ("database.php");
+include("database.php");
 $db = getDb();
 
 if($db)

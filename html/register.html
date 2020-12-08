@@ -5,16 +5,16 @@
     </head>
 
     <body>
-        <form>
+        <form id="form_registor">
             <div id="showError"></div>
             <table>
                 <tr>
                     <td>Username</td>
-                    <td><input type="email" id="input_email"required></td>
+                    <td><input type="email" name="username" id="input_email"required></td>
                 </tr>
                 <tr>
                     <td>Password</td>
-                    <td><input type="password" id="input_password" minlength="6" maxlength="20"></td>
+                    <td><input type="password" name="password" id="input_password" minlength="6" maxlength="20"></td>
                 </tr>
                 <tr>
                     <td>Confirm password</td>
@@ -22,19 +22,19 @@
                 </tr>
                 <tr>
                     <td>Full name</td>
-                    <td><input type="text" id="input_name"></td>
+                    <td><input type="text" name="fullname" id="input_name"></td>
                 </tr>
                 <tr>
                     <td>Phone</td>
-                    <td><input type="tel" id="input_phone"></td>
+                    <td><input type="tel" name="phone" id="input_phone"></td>
                 </tr>
                 <tr>
                     <td>Birthday</td>
-                    <td><input type="date" id="input_dob"></td>
+                    <td><input type="date" name="birthday" id="input_dob"></td>
                 </tr>
                 <tr>
                     <td>Age</td>
-                    <td><input type="number" id="input_age"></td>
+                    <td><input type="number" name="age" id="input_age"></td>
                 </tr>
                 <tr>
                     <td><input type="button" id="btn_register" value="Enter"></td>
