@@ -8,6 +8,7 @@ function showLogin(e){
         data: $("#form_login").serialize(),
         success: function(result){
             result = $.parseJSON(result);
+            alert(result.password);
             if(result.success){
                 alert("Login successfully \n"+
                       "Full name: " + result.fullname+"\n"+

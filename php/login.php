@@ -29,5 +29,6 @@
                            'fullname' => $db_fullname,
                            'phone' => $db_phone,
                            'birthday' => $db_birthday,
+                           'password' => $db_password,
                            'age' => $db_age));
 ?>
