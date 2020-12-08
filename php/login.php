@@ -1,7 +1,7 @@
 <?php
     $username = $_POST['username'];
     $password = $_POST['password'];
-    $success =false;
+    $success =0;
     $db_fullname= $db_phone= $db_birthday= $db_age ="";
     include("database.php");
     $db = getDb();
@@ -20,7 +20,7 @@
 
             if(password_verify($password,$db_password))
             {
-                $success = true;
+                $success = 1;
             }
         }
     }
