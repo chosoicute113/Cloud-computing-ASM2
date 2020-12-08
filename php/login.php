@@ -12,7 +12,7 @@
         $result = pg_query($query);
         if($result)
         {
-            alert(pg_result($result, 0, "password"));
+            alert(pg_result($result, 0, "password"));   
             $db_password = pg_result($result, 0, "password");
             $db_fullname = pg_result($result, 0, "fullname");
             $db_phone = pg_result($result, 0, "phone");
@@ -31,5 +31,5 @@
                            'birthday' => $db_birthday,
                            'age' => $db_age));
     function alert($msg) {
-    echo "<script type='text/javascript'>alert('$msg');</script>";
+    echo "<script type='text/javascript'>alert('$msg');</script>";}
 ?>
