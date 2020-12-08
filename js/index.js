@@ -1,9 +1,10 @@
 $(document).on("click","#btn_register",showRegistry);
 $(document).on("click","#btn_login", showLogin);
 
-function showLogin(){
+function showLogin(e){
+    e.preventDefault();
     $.ajax({
-        type: "POST", url: "../php/register.php",
+        type: "POST", url: "../php/login.php",
         data: $("#form_login").serialize(),
         success: function(result){
             result = $.parseJSON(result);
@@ -21,7 +22,8 @@ function showLogin(){
     });
 }
 
-function showRegistry(){
+function showRegistry(e){
+    e.preventDefault();
     if($("#input_password2").val() == $("#input_password").val()){
         $.ajax({
             type: "POST", url: "../php/register.php",
