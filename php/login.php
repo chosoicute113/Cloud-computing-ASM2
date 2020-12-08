@@ -12,8 +12,8 @@
         $result = pg_query($query);
         if($result)
         {
-            alert(pg_result($result, 0, "password"));   
             $db_password = pg_result($result, 0, "password");
+            echo "<script type='text/javascript'>$db_password(\"$error\");</script>";
             $db_fullname = pg_result($result, 0, "fullname");
             $db_phone = pg_result($result, 0, "phone");
             $db_birthday = pg_result($result, 0, "birthday");
@@ -30,6 +30,4 @@
                            'phone' => $db_phone,
                            'birthday' => $db_birthday,
                            'age' => $db_age));
-    function alert($msg) {
-    echo "<script type='text/javascript'>alert('$msg');</script>";}
 ?>
