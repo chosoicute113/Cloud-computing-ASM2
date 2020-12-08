@@ -8,7 +8,7 @@
 
     if($db)
     {
-        $query = "select * from user_register where username='$username'";
+        $query = "select * from user_registered where username='$username'";
         $result = pg_query($query);
         if($result)
         {
