@@ -1,5 +1,5 @@
 $(document).on("click","#btn_register",showRegistry);
-$(document).on("click","#btn_login", showLogin);
+$(document).on("submit","#form_login", showLogin);
 
 function showLogin(e){
     e.preventDefault();
