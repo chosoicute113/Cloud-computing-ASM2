@@ -13,7 +13,6 @@
         if($result)
         {
             $db_password = pg_result($result, 0, "password");
-            echo "<script type='text/javascript'>$db_password(\"$error\");</script>";
             $db_fullname = pg_result($result, 0, "fullname");
             $db_phone = pg_result($result, 0, "phone");
             $db_birthday = pg_result($result, 0, "birthday");
