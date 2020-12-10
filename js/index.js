@@ -1,4 +1,4 @@
-$(document).on("click","#btn_register",showRegistry);
+$(document).on("submit","#form_register",showRegistry);
 $(document).on("submit","#form_login", showLogin);
 
 function showLogin(e){
