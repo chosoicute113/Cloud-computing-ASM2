@@ -1,6 +1,21 @@
 $(document).on("submit","#form_register",showRegistry);
 $(document).on("submit","#form_login", showLogin);
+$(".nav-item").ready(Ready);
+$(document).on("DOMContentLoaded", DOMLoaded);
 
+function DOMLoaded() {
+    $("#navbar").load("../html/nav.html");
+}
+
+function Ready() {
+    var pgurl = window.location.href.substr(window.location.href.lastIndexOf("/") + 1);
+
+    $(".nav-item a").each(function () {
+        if ($(this).attr("href") == pgurl || $(this).attr("href") == '') {
+            $(this).addClass("active");
+        }
+    });
+}
 function showLogin(e){
     e.preventDefault();
     $.ajax({
