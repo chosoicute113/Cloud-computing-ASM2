@@ -63,11 +63,8 @@ function showRegistry(e){
 }
 
 function showProduct(){
-    var name;
-    var price;
-    var img;
     var product = [
-        {name = "s1", price ="n/a", img="n/a" }
+        {name:"s1", price:"n/a", img:"n/a" }
     ]
     for(var item in product){
         var text = `<div class="col-sm">
