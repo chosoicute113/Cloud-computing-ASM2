@@ -64,10 +64,11 @@ function showRegistry(e){
 }
 
 function showProduct(){
+    $("#showAllProduct").empty();
     var product = [
-        {name:"s1", price:"n/a", img:"https://cdn.tgdd.vn/Products/Images/3226/76520/bhx/nuoc-tang-luc-sting-huong-dau-330ml-201909031559004919.jpg" }
-    ]
-    for(var item in product){
+        {name:"sting", price:"8000", img:"https://cdn.tgdd.vn/Products/Images/3226/76520/bhx/nuoc-tang-luc-sting-huong-dau-330ml-201909031559004919.jpg"}
+    ];
+    for(item of product){   
         var text = `<div class="card">
                         <div class="card"style="width: 18rem;"">
                             <img class="card-img-top" src="${item.img}">
