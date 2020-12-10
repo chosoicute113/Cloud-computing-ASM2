@@ -4,7 +4,7 @@ $(".nav-item").ready(Ready);
 $(document).on("DOMContentLoaded", DOMLoaded);
 
 function DOMLoaded() {
-    $("#navbar").load("../html/nav.html");
+    $("#NavBar").load("../html/nav.html");
 }
 
 function Ready() {
@@ -63,11 +63,11 @@ function showRegistry(e){
 }
 
 function showProduct(){
+    var name;
+    var price;
+    var img;
     var product = [
-        {name ="product1", price ="n/a", img ="n/a"},
-        {name ="product1", price ="n/a", img ="n/a"},
-        {name ="product1", price ="n/a", img ="n/a"},
-        {name ="product1", price ="n/a", img ="n/a"}
+        {name = "s1", price ="n/a", img="n/a" }
     ]
     for(var item in product){
         var text = `<div class="col-sm">
