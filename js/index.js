@@ -61,3 +61,25 @@ function showRegistry(e){
         return;
     }
 }
+
+function showProduct(){
+    var product = [
+        {name ="product1", price ="n/a", img ="n/a"},
+        {name ="product1", price ="n/a", img ="n/a"},
+        {name ="product1", price ="n/a", img ="n/a"},
+        {name ="product1", price ="n/a", img ="n/a"}
+    ]
+    for(var item in product){
+        var text = `<div class="col-sm">
+                        <div class="card" style="width: 18rem;">
+                            <img src="${item.img}" clasas="card-img-top" alt="${item.name}">
+                            <div class="card-body">
+                                <h5 class="card-title"> ${item.name}</h5>
+                                <p class="card-text">${item.price}</p>
+                                <a href="#" class="btn btn-primary"> View further detail</a>
+                            </div>
+                        <div>
+                    </div>`;
+        $("#showAllProduct").append(text);
+    }
+}
