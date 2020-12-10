@@ -1,20 +1,7 @@
 .div1{
     padding: 10px;
 }
-.d-flex{
-    padding-left: 0;
-    
-}
 .searchbar{
     border: black 5px solid;
     width: 500px;
-}
-.container-fluid{
-    border: black 5px solid;
-}
-.collapse{
-    border: black 5px solid;
-}
-.nav-item{
-    border: black 5px solid;
 }
