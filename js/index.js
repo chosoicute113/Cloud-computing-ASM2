@@ -2,6 +2,7 @@ $(document).on("submit","#form_register",showRegistry);
 $(document).on("submit","#form_login", showLogin);
 $(".nav-item").ready(Ready);
 $(document).on("DOMContentLoaded", DOMLoaded);
+$("#showAllProduct").ready(showProduct);
 
 function DOMLoaded() {
     $("#NavBar").load("../html/nav.html");
@@ -67,16 +68,19 @@ function showProduct(){
         {name:"s1", price:"n/a", img:"https://cdn.tgdd.vn/Products/Images/3226/76520/bhx/nuoc-tang-luc-sting-huong-dau-330ml-201909031559004919.jpg" }
     ]
     for(var item in product){
-        var text = `<div class="col-sm">
-                        <div class="card" style="width: 18rem;">
-                            <img src="${item.img}" clasas="card-img-top" alt="${item.name}">
+        var text = `<div class="card">
+                        <div class="card"style="width: 18rem;"">
+                            <img class="card-img-top" src="${item.img}">
                             <div class="card-body">
-                                <h5 class="card-title"> ${item.name}</h5>
-                                <p class="card-text">${item.price}</p>
-                                <a href="#" class="btn btn-primary"> View further detail</a>
+                                <h5 class="card-title">${item.name}</h5>
+                                <p class="card-text"></p>
+                                </div>
+                                <div class="card-footer">
+                                    <small>${item.price}</small>
                             </div>
-                        <div>
+                        </div>
                     </div>`;
-        $(".showAllProduct").append(text);
+        
+        $("#showAllProduct").append(text);
     }
 }
