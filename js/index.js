@@ -64,7 +64,7 @@ function showRegistry(e){
 
 function showProduct(){
     var product = [
-        {name:"s1", price:"n/a", img:"n/a" }
+        {name:"s1", price:"n/a", img:"https://cdn.tgdd.vn/Products/Images/3226/76520/bhx/nuoc-tang-luc-sting-huong-dau-330ml-201909031559004919.jpg" }
     ]
     for(var item in product){
         var text = `<div class="col-sm">
@@ -77,6 +77,6 @@ function showProduct(){
                             </div>
                         <div>
                     </div>`;
-        $("#showAllProduct").append(text);
+        $(".showAllProduct").append(text);
     }
 }
