@@ -7,3 +7,6 @@
     border: black 1px solid;
     width: 500px;
 }
+.menu-font{
+    font: 1rem/1.5rem var(--font-family-sans-serif)
+}
