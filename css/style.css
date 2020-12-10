@@ -2,6 +2,9 @@
     padding: 10px;
 }
 .searchbar{
-    border: black 5px solid;
+    border: black 1px solid;
     width: 500px;
+}
+.navbar-background{
+    background-image: linear-gradient(black,white);
 }
