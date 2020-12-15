@@ -63,8 +63,7 @@ function showRegistry(e){
     }
 }
 
-function showProduct_php(e){
-    e.preventDefault();
+function showProduct_php(){
     $.ajax({
         type: "POST", url: "../php/product.php",
         success: function(result){
