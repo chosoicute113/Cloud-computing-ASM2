@@ -13,7 +13,7 @@
 .setBorder{
     border: black 1px solid;
 }
-.img {
+.img-manual {
     display: block;
     max-width: 100%;
     height: 100%;
