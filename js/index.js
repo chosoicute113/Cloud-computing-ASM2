@@ -84,7 +84,7 @@ function showProduct(products){
     for(item of products){   
         var text = `<div class="col mb-4">
                         <div class="card">
-                            <img class="card-img-top img" src="${item.img}">
+                            <img class="card-img-top img setBorder" src="${item.img}">
                             <div class="card-body">
                                 <h5 class="card-title">${item.name}</h5>
                                 <p class="card-text"></p>
