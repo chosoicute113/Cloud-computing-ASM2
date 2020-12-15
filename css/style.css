@@ -13,3 +13,8 @@
 .setBorder{
     border: black 1px solid;
 }
+.img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+  }
