@@ -100,8 +100,8 @@ function showProduct(products){
     }
 }
 
-$(document).on("click", "btn-view-detail", ViewDetails(this));
+/*$(document).on("click", "btn-view-detail", ViewDetails(this));
 function ViewDetails(product){
     var id = product.getAttribute("data-product-id");
     alert(id);
-}
+}*/
