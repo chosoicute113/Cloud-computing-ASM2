@@ -82,15 +82,15 @@ function showProduct(products){
     $("#showAllProduct").empty();
     
     for(item of products){   
-        var text = `<div class="card">
-                        <div class="card" style="width: 18rem; text-align;">
+        var text = `<div class="col mb-4">
+                        <div class="card">
                             <img class="card-img-top" src="${item.img}">
                             <div class="card-body">
                                 <h5 class="card-title">${item.name}</h5>
                                 <p class="card-text"></p>
                             </div>
                              <div class="card-footer">
-                                <small>${item.price}</small>
+                                <small>${item.price} VND</small>
                             </div>
                         </div>
                     </div>`;
