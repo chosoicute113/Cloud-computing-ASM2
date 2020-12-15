@@ -2,7 +2,7 @@ $(document).on("submit","#form_register",showRegistry);
 $(document).on("submit","#form_login", showLogin);
 $(".nav-item").ready(Ready);
 $(document).on("DOMContentLoaded", DOMLoaded);
-$("#showAllProduct").ready(showProduct);
+$("#showAllProduct").ready(showProduct_php);
 
 function DOMLoaded() {
     $("#NavBar").load("../html/nav.html");
@@ -63,25 +63,45 @@ function showRegistry(e){
     }
 }
 
-function showProduct(){
+function showProduct_php(e){
+    e.preventDefault();
+    $.ajax({
+        type: "POST", url: "../php/product.php",
+        success: function(result){
+            result = $.parseJSON(result);
+            if(result.success){
+                showProduct(result);
+            }
+            else{
+                return;
+            }
+        }
+    });
+}
+
+function showProduct(products){
     $("#showAllProduct").empty();
-    var product = [
-        {name:"sting", price:"8000", img:"https://cdn.tgdd.vn/Products/Images/3226/76520/bhx/nuoc-tang-luc-sting-huong-dau-330ml-201909031559004919.jpg"}
-    ];
-    for(item of product){   
+    
+    for(item of products){   
         var text = `<div class="card">
-                        <div class="card"style="width: 18rem;"">
+                        <div class="card" style="width: 18rem; text-align;">
                             <img class="card-img-top" src="${item.img}">
                             <div class="card-body">
                                 <h5 class="card-title">${item.name}</h5>
                                 <p class="card-text"></p>
-                                </div>
-                                <div class="card-footer">
-                                    <small>${item.price}</small>
+                            </div>
+                             <div class="card-footer">
+                                <small>${item.price}</small>
                             </div>
                         </div>
                     </div>`;
         
         $("#showAllProduct").append(text);
     }
+}
+
+$(document).on("click", "btn-view-detail", ViewDetails(this));
+function ViewDetails(product){
+    var id = product.getAttribute("data-product-id");
+    alert(id);
 }
