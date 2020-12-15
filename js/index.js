@@ -69,7 +69,7 @@ function showProduct_php(e){
         type: "POST", url: "../php/product.php",
         success: function(result){
             result = $.parseJSON(result);
-            if(result.success){
+            if(result){
                 showProduct(result);
             }
             else{
