@@ -18,6 +18,7 @@ function Ready() {
     });
 }
 function showLogin(e){
+    $("#showError").empty();
     e.preventDefault();
     $.ajax({
         type: "POST", url: "../php/login.php",
@@ -32,7 +33,7 @@ function showLogin(e){
                       "Age: "+ result.age);
             }
             else{
-                alert("Login unseccessfully");
+                $("#showError").text("There is something wrong! please check your username and password");
             }
         }
     });
@@ -82,23 +83,29 @@ function showProduct(products){
     $("#showAllProduct").empty();
     
     for(item of products){   
-        var text = `<div class="col mb-4">
-                        <div class="card">
-                            <div class="img-manual setBorder">
-                                <img src="${item.img}" class="img-fluid" alt="Responsive image">
-                            </div>
-                            <div class="card-body">
-                                <h5 class="card-title">${item.name}</h5>
-                                <p class="card-text"></p>
-                            </div>
-                             <div class="card-footer">
-                                <small>${item.price} VND</small>
-                            </div>
-                        </div>
-                    </div>`;
+        var text = `
+        <div class="card" style="width: 18rem">
+            <img src="${item.img}g"class="card-img-top"alt="${item.name}"/>
+            <div class="card-body">
+              <h3 class="card-title">Nekopara Anime Figurine - Vanila</h3>
+              <h5 class="card-text">3000000 VND</h5>
+            </div>
+            <div class="card-body">
+              <a href="#" class="btn btn-primary">View in detail</a>
+              <a href="#" class="btn btn-primary">Put to cart</a>
+            </div>
+         </div>
+        `;
         
         $("#showAllProduct").append(text);
     }
+}
+function numberWithCommas(x) {
+    x = x.toString();
+    var pattern = /(-?\d+)(\d{3})/;
+    while (pattern.test(x))
+        x = x.replace(pattern, "$1,$2");
+    return x;
 }
 
 /*$(document).on("click", "btn-view-detail", ViewDetails(this));
