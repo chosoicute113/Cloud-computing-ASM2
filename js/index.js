@@ -82,13 +82,14 @@ function showProduct_php(){
 function showProduct(products){
     $("#showAllProduct").empty();
     
-    for(item of products){   
+    for(item of products){
+        item.price = numberWithCommas(item.price);   
         var text = `
         <div class="card" style="width: 18rem">
-            <img src="${item.img}g"class="card-img-top"alt="${item.name}"/>
+            <img src="${item.img}"class="card-img-top"alt="${item.name}"/>
             <div class="card-body">
-              <h3 class="card-title">Nekopara Anime Figurine - Vanila</h3>
-              <h5 class="card-text">3000000 VND</h5>
+              <h3 class="card-title">${item.name}</h3>
+              <h5 class="card-text">${item.price}$</h5>
             </div>
             <div class="card-body">
               <a href="#" class="btn btn-primary">View in detail</a>
