@@ -23,7 +23,7 @@
     height: 100%;
   }
 .overflow_hidden{
-    overflow: hidden;
+    overflow: visible;
 }
 .container-login-form{
     -webkit-box-shadow: 0px 0px 48px 28px rgba(0,0,0,0.81);
