@@ -85,7 +85,7 @@ function showProduct(products){
     for(item of products){
         item.price = numberWithCommas(item.price);   
         var text = `
-        <div class="card" style="width: 18rem; padding: 0 10px;">
+        <div class="card" style="width: 18rem;padding: 0px 10px; margin: 0 auto;">
             <img src="${item.img}"class="card-img-top"alt="${item.name}"/>
             <div class="card-body">
               <h3 class="card-title">${item.name}</h3>
