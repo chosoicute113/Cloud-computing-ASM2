@@ -92,7 +92,7 @@ function showProduct(products){
               <h5 class="card-text">${item.price}$</h5>
             </div>
             <div class="card-body">
-              <a href="#" class="btn btn-primary">View in detail</a>
+              <a href="#" class="btn btn-primary" id="btn-view-detail">View in detail</a>
               <a href="#" class="btn btn-primary">Put to cart</a>
             </div>
          </div>
@@ -109,8 +109,20 @@ function numberWithCommas(x) {
     return x;
 }
 
-/*$(document).on("click", "btn-view-detail", ViewDetails(this));
+/(document).on("click", "btn-view-detail", ViewDetails(this));
 function ViewDetails(product){
-    var id = product.getAttribute("data-product-id");
-    alert(id);
-}*/
+    var ID= product.getAttribute("data-product-id");
+        $.ajax({
+            type: "POST", url: "../php/product_detail.php",
+            data: {id: ID},
+            success: function(result){
+                result = $.parseJSON(result);
+                if(result){
+                    showProduct(result);
+                }
+                else{
+                    return;
+                }
+            }
+        });
+}
