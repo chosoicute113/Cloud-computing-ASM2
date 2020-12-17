@@ -117,12 +117,7 @@ function ViewDetails(product){
             data: {id: ID},
             success: function(result){
                 result = $.parseJSON(result);
-                if(result){
-                    showProduct(result);
-                }
-                else{
-                    return;
-                }
+                
             }
         });
 }
