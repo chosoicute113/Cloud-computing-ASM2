@@ -149,4 +149,4 @@ function showCategorized_php(category){
         }
     });
 }
-$(document).on("click","#figurineCategory",showCategorized_php('Figurine'));
+$(document).on('click','#figurineCategory',showCategorized_php('Figurine'));
