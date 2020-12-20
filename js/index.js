@@ -105,7 +105,7 @@ function showProduct(products){
     }
 }
 function showCategorized(products){
-    $("#showAllProduct").empty();
+    $("#showCategorized").empty();
     
     for(item of products){
         item.price = numberWithCommas(item.price);
@@ -124,7 +124,7 @@ function showCategorized(products){
         </div>
         `;
         
-        $("#showAllProduct").append(text);
+        $("#showCategorized").append(text);
     }
 }
 function numberWithCommas(x) {
