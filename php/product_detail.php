@@ -3,7 +3,7 @@ if (isset($_POST['id'])) {
     include('database.php');
 
     if ( getDb() ) {
-        $id = intval($_POST['id']);
+        $id = $_POST['id'];
 
         $query = "SELECT * FROM PRODUCT WHERE id = $id";
         $result = pg_query($query);
