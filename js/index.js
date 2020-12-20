@@ -139,6 +139,7 @@ function showCategorized_php(category){
         data: {CATEGORY:category},
         success: function(result){
             result = $.parseJSON(result);
+            location.href="product_category.html";
             if(result){
                 showProduct(result);
             }
