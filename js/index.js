@@ -134,7 +134,6 @@ function ViewDetails(product){
     $("#detailshow").show();
 }
 function showCategorized_php(category){
-    location.href="product_category.html";
     $.ajax({
         type: "POST", url: "../php/product_category.php",
         data: {CATEGORY:category},
