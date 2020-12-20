@@ -121,12 +121,11 @@ function ViewDetails(product){
         data: {id: ID},
         success: function(result){
             result = $.parseJSON(result);
-            $("#sDescription").append(result.name);
-            console.log(result)
-            $("#sName").append(result.description);
-
-            $("#labelselect").hidden = true;
-            $("#detailshow").hidden = false;
+            $("#sDescription").append(result[0].name);
+            $("#sName").append(result[0].description);
+            
         }
     });
+    $("#labelselect").hidden = true;
+    $("#detailshow").hidden = false;
 }
