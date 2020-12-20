@@ -100,3 +100,6 @@ div.sticky {
 .changebg:hover{
     background-color: cyan;
 }
+.white-box{
+    background-color: white;
+}
