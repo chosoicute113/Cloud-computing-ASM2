@@ -125,7 +125,7 @@ function ViewDetails(product){
             $("#sDescription").append(result[0].description);
             console.log(result);
             $("#sName").append(result[0].name);
-            console.log(esult[0].img);
+            console.log(result[0].img);
             $("#imgchange").attr("src",result[0].img);
             
         }
