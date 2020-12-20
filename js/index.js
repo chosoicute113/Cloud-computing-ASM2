@@ -83,19 +83,20 @@ function showProduct(products){
     $("#showAllProduct").empty();
     
     for(item of products){
-        item.price = numberWithCommas(item.price);   
+        item.price = numberWithCommas(item.price);
+
         var text = `
-        <div class="card" style="width: 18rem;padding: 0px 10px; margin: 0 auto;">
-            <img src="${item.img}"class="card-img-top"alt="${item.name}"/>
+        <div class="card" style="width: 18rem;">
+            <img data-product-id='${item.id}' src="${item.img}"class="card-img-top"alt="${item.name}"/>
             <div class="card-body">
-              <h3 class="card-title">${item.name}</h3>
-              <h5 class="card-text">${item.price}$</h5>
+                <h3 class="card-title ">${item.name}</h3>
+                <h5 class="card-text" style="color: #66ccff;">$${item.price}</h5>
             </div>
             <div class="card-body">
-              <a href="#" class="btn btn-primary" id="btn-view-detail">View in detail</a>
-              <a href="#" class="btn btn-primary">Put to cart</a>
+                <a id="btn-view" class="btn btn-primary">View in detail</a>
+                <a id="btn-add" class="btn btn-primary">Put to cart</a>
             </div>
-         </div>
+        </div>
         `;
         
         $("#showAllProduct").append(text);
@@ -109,15 +110,21 @@ function numberWithCommas(x) {
     return x;
 }
 
-/*$(document).on("click", "btn-view-detail", ViewDetails(this));
-function ViewDetails(product){
-    var ID= product.getAttribute("data-product-id");
+$(document).on("click", "btn-view-detail", ViewDetails);
+
+function ViewDetails(){
+    $("#sDescription").empty();
+    $("#sName").empty();
+    var ID= this.data("product-id");
         $.ajax({
             type: "POST", url: "../php/product_detail.php",
             data: {id: ID},
             success: function(result){
                 result = $.parseJSON(result);
-                
+                $("#sDescription").append(result.name);
+                $("#sName").append(result.description);
+                $("#labelselect").hidden() = true;
+                $("#detailshow").hidden() = false;
             }
         });
-}*/
+}
