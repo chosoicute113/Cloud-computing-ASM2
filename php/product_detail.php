@@ -2,7 +2,7 @@
 if (isset($_POST['id'])) {
     include('database.php');
 
-    if ( getDB() ) {
+    if ( getDb() ) {
         $id = intval($_POST['id']);
 
         $query = "SELECT * FROM PRODUCT WHERE id = $id";
