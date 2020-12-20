@@ -1,7 +1,7 @@
 <?php>
 include("database.php");
 if(getdb()){
-    $query="SELECT * FROM productlist_figurine";
+    $query="SELECT * FROM PRODUCT";
     $result=pg_query($query);
 
     if($result){
