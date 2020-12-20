@@ -149,4 +149,4 @@ function showCategorized_php(category){
         }
     });
 }
-document.getElementById("figurineCategory").onclick = showCategorized_php('Figurine');
+document.getElementById("nerfCategory").onclick = showCategorized_php('Figurine');
