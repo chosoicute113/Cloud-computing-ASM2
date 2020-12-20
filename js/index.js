@@ -3,6 +3,7 @@ $(document).on("submit","#form_login", showLogin);
 $(".nav-item").ready(Ready);
 $(document).on("DOMContentLoaded", DOMLoaded);
 $("#showAllProduct").ready(showProduct_php);
+$("#detailshow").hide();
 
 function DOMLoaded() {
     $("#NavBar").load("../html/nav.html");
