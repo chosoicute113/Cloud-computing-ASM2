@@ -5,7 +5,7 @@ if (isset($_POST['id'])) {
     if ( getDB() ) {
         $id = intval($_POST['id']);
 
-        $query = "SELECT * FROM product WHERE id = $id";
+        $query = "SELECT * FROM PRODUCT WHERE id = $id";
         $result = pg_query($query);
 
         if ($result) {
