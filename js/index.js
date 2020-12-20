@@ -133,3 +133,20 @@ function ViewDetails(product){
     $("#labelselect").hide();
     $("#detailshow").show();
 }
+function showCategorized_php(category){
+    location.href="product_category.html";
+    $.ajax({
+        type: "POST", url: "../php/product_category.php",
+        data: {CATEGORY:category},
+        success: function(result){
+            result = $.parseJSON(result);
+            if(result){
+                showProduct(result);
+            }
+            else{
+                return;
+            }
+        }
+    });
+}
+$(document).on("click","#figurineCategory",showCategorized_php('Figurine'));
