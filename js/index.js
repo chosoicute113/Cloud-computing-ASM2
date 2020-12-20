@@ -123,7 +123,7 @@ function ViewDetails(product){
         success: function(result){
             result = $.parseJSON(result);
             $("#sDescription").append(result[0].name);
-            console.log(result[0].name);
+            console.log(result);
             $("#sName").append(result[0].description);
             
         }
