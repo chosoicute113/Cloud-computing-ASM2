@@ -127,7 +127,7 @@ function ViewDetails(product){
             
         }
     });
-    $("#labelselect").hidden = true;
+    $("#labelselect").hide();
     console.log($("#labelselect").hidden);
-    $("#detailshow").hidden = false;
+    $("#detailshow").show();
 }
