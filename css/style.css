@@ -8,7 +8,8 @@
     width: 100%;
     height: 100vh;
     
-    background-image: no-repeat linear-gradient(blue, white);
+    background-image: linear-gradient(blue, white);
+    background-repeat: no-repeat;
     
 }
 .searchbar{
