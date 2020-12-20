@@ -122,7 +122,9 @@ function ViewDetails(product){
         success: function(result){
             result = $.parseJSON(result);
             $("#sDescription").append(result.name);
+            console.log(result.name)
             $("#sName").append(result.description);
+            
             $("#labelselect").hidden = true;
             $("#detailshow").hidden = false;
         }
