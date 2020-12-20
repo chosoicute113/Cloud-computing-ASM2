@@ -126,7 +126,7 @@ function ViewDetails(product){
             console.log(result);
             $("#sName").append(result[0].name);
             console.log(result[0].img);
-            $("#imgchange").attr("src",result[0].img);
+            document.getElementById("imgchange").src = result[0].img;
             
         }
     });
