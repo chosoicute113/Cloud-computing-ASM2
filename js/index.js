@@ -123,8 +123,8 @@ function ViewDetails(product){
             result = $.parseJSON(result);
             $("#sDescription").append(result.name);
             $("#sName").append(result.description);
-            $("#labelselect").hidden() = true;
-            $("#detailshow").hidden() = false;
+            $("#labelselect").hidden = true;
+            $("#detailshow").hidden = false;
         }
     });
 }
