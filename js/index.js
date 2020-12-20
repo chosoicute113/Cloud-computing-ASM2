@@ -115,7 +115,7 @@ $(document).on("click", "btn-view", ViewDetails(this));
 function ViewDetails(product){
     $("#sDescription").empty();
     $("#sName").empty();
-    var ID= product.data("product-id");
+    var ID= product.data('product-id');
         $.ajax({
             type: "POST", url: "../php/product_detail.php",
             data: {id: ID},
