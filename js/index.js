@@ -148,4 +148,4 @@ function showCategorized_php(category){
         }
     });
 }
-$(document).on('click','#figurineCategory',showCategorized_php('Figurine'));
+document.getElementById("figurineCategory").onclick = showCategorized_php('Figurine');
