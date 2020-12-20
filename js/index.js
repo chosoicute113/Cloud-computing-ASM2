@@ -122,9 +122,10 @@ function ViewDetails(product){
         data: {id: ID},
         success: function(result){
             result = $.parseJSON(result);
-            $("#sDescription").append(result[0].name);
+            $("#sDescription").append(result[0].description);
             console.log(result);
-            $("#sName").append(result[0].description);
+            $("#sName").append(result[0].name);
+            $("#imgchange").attr("src",result[0].img);
             
         }
     });
