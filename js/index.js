@@ -110,7 +110,7 @@ function numberWithCommas(x) {
     return x;
 }
 
-$(document).on("click", "btn-view-detail", ViewDetails);
+$(document).on("click", "btn-view", ViewDetails);
 
 function ViewDetails(){
     $("#sDescription").empty();
