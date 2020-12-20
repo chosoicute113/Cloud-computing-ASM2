@@ -2,7 +2,7 @@
 include("database.php");
 if (isset($_POST['CATEGORY'])) {
     $category = $_POST['CATEGORY'];
-    if(getdb()){
+    if(getDb()){
     $query="SELECT * 
             FROM PRODUCT,SUB_PRODUCT,SUB_CATEGORY,CATEGORY
             WHERE PRODUCT.id = SUB_PRODUCT.product_id

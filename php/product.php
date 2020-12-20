@@ -1,6 +1,6 @@
 <?php>
 include("database.php");
-if(getdb()){
+if(getDb()){
     $query="SELECT * FROM PRODUCT";
     $result=pg_query($query);
 

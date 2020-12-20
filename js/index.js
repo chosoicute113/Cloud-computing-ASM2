@@ -3,6 +3,7 @@ $(document).on("submit","#form_login", showLogin);
 $(".nav-item").ready(Ready);
 $(document).on("DOMContentLoaded", DOMLoaded);
 $("#showAllProduct").ready(showProduct_php);
+$("#showCategorized").ready(showCategorized_php);
 $("#detailshow").hide();
 
 function DOMLoaded() {
@@ -133,7 +134,8 @@ function ViewDetails(product){
     $("#labelselect").hide();
     $("#detailshow").show();
 }
-function showCategorized_php(category){
+function showCategorized_php(){
+    var category = localStorage.getItem("Category");
     $.ajax({
         type: "POST", url: "../php/product_category.php",
         data: {CATEGORY:category},
@@ -149,4 +151,9 @@ function showCategorized_php(category){
         }
     });
 }
-document.getElementById("nerfCategory").onclick = showCategorized_php('Figurine');
+document.getElementById("figurineCategory").onclick = transferData("Figurine");
+function transferData(category){
+    console.log(document.getElementById("figurineCategory"));
+    localStorage.setItem("Category",category)
+    location.href="product_category.html";
+}
