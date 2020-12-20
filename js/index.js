@@ -128,6 +128,5 @@ function ViewDetails(product){
         }
     });
     $("#labelselect").hide();
-    console.log($("#labelselect").hidden);
     $("#detailshow").show();
 }
