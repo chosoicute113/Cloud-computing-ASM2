@@ -93,7 +93,7 @@ function showProduct(products){
                 <h5 class="card-text" style="color: #66ccff;">$${item.price}</h5>
             </div>
             <div class="card-body">
-                <a id="btn-view" class="btn btn-primary">View in detail</a>
+                <a id="btn-view" onclick = 'ViewDetails(this)' class="btn btn-primary">View in detail</a>
                 <a id="btn-add" class="btn btn-primary">Put to cart</a>
             </div>
         </div>
@@ -113,9 +113,10 @@ function numberWithCommas(x) {
 document.getElementById("btn-view").onclick = ViewDetails(this);
 
 function ViewDetails(product){
+    console.log("FUCK YES");
     $("#sDescription").empty();
     $("#sName").empty();
-    var ID= product.getAttribute("data-product-id");
+    var ID= product.data('product-id');
     console.log(ID);
     $.ajax({
         type: "POST", url: "../php/product_detail.php",
