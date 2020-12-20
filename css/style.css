@@ -95,3 +95,6 @@ div.sticky {
 .font-sansrif{
     font-family: Arial, Helvetica, sans-serif;
 }
+.changebg:hover{
+    background-color: cyan;
+}
