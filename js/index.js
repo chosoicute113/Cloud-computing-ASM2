@@ -109,7 +109,7 @@ function numberWithCommas(x) {
     return x;
 }
 
-$(document).on("click", "btn-view-detail", ViewDetails(this));
+/*$(document).on("click", "btn-view-detail", ViewDetails(this));
 function ViewDetails(product){
     var ID= product.getAttribute("data-product-id");
         $.ajax({
@@ -120,4 +120,4 @@ function ViewDetails(product){
                 
             }
         });
-}
+}*/

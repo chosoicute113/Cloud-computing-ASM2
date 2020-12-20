@@ -4,6 +4,12 @@
     background: url("https://i.pinimg.com/originals/ab/b7/9a/abb79a18f2048bb73fb02f7eeccd4cba.jpg") no-repeat;
     
 }
+.background_home{
+    width: 100%;
+    height: 100vh;
+    background-image: linear-gradient(blue, white);
+    
+}
 .searchbar{
     border: black 1px solid;
     width: 900;
@@ -29,4 +35,29 @@
     -webkit-box-shadow: 0px 0px 48px 28px rgba(0,0,0,0.81);
     -moz-box-shadow: 0px 0px 48px 28px rgba(0,0,0,0.81);
     box-shadow: 0px 0px 48px 28px rgba(0,0,0,0.81);
+}
+.img-resize{
+    margin: 0 auto;
+    height: auto;
+    width: 600px;
+    min-height: 300px;
+}
+.carousel-shadow-box{
+    -webkit-box-shadow: 0px 0px 95px 15px rgba(94,255,231,1);
+    -moz-box-shadow: 0px 0px 95px 15px rgba(94,255,231,1);
+    box-shadow: 0px 0px 95px 15px rgba(94,255,231,1);
+}
+.banner-border{
+    border-radius: 98px 98px 98px 98px;
+    -moz-border-radius: 98px 98px 98px 98px;
+    -webkit-border-radius: 98px 98px 98px 98px;
+    border: 5px solid #000000;
+    -webkit-box-shadow: 0px 0px 95px 15px rgba(94,255,231,1);
+    -moz-box-shadow: 0px 0px 95px 15px rgba(94,255,231,1);
+    box-shadow: 0px 0px 95px 15px rgba(94,255,231,1);
+}
+.carousel-box-size{
+    width: 700px;
+    height: 360px;  
+    margin: 50px auto;
 }
