@@ -110,12 +110,12 @@ function numberWithCommas(x) {
     return x;
 }
 
-$(document).on("click", "btn-view", ViewDetails);
+$(document).on("click", "btn-view", ViewDetails(this));
 
-function ViewDetails(){
+function ViewDetails(product){
     $("#sDescription").empty();
     $("#sName").empty();
-    var ID= this.data("product-id");
+    var ID= product.data("product-id");
         $.ajax({
             type: "POST", url: "../php/product_detail.php",
             data: {id: ID},
