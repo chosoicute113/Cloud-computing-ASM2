@@ -174,6 +174,6 @@ function showCategorized_php(){
     });
 }
 function transferData(category){
-    console.log(document.getElementById("figurineCategory"));
+    console.log(category);
     localStorage.setItem("Category",category)
 }
