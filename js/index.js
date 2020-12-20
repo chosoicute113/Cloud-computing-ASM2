@@ -1,7 +1,7 @@
 $(document).on("submit","#form_register",showRegistry);
 $(document).on("submit","#form_login", showLogin);
 $(".nav-item").ready(Ready);
-$(document).on("DOMContentLoaded", DOMLoaded);
+//$(document).on("DOMContentLoaded", DOMLoaded);
 $("#showAllProduct").ready(showProduct_php);
 $("#showCategorized").ready(showCategorized_php);
 $("#detailshow").hide();
