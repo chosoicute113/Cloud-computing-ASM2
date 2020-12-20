@@ -141,7 +141,6 @@ function showCategorized_php(){
         data: {CATEGORY:category},
         success: function(result){
             result = $.parseJSON(result);
-            location.href="product_category.html";
             if(result){
                 showProduct(result);
             }
@@ -151,9 +150,7 @@ function showCategorized_php(){
         }
     });
 }
-document.getElementById("figurineCategory").onclick = transferData("Figurine");
 function transferData(category){
     console.log(document.getElementById("figurineCategory"));
     localStorage.setItem("Category",category)
-    location.href="product_category.html";
 }
