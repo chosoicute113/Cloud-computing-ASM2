@@ -165,6 +165,7 @@ function showCategorized_php(){
         success: function(result){
             result = $.parseJSON(result);
             if(result){
+                console.log(result);
                 showCategorized(result);
             }
             else{
