@@ -116,15 +116,16 @@ function ViewDetails(){
     $("#sDescription").empty();
     $("#sName").empty();
     var ID= $(this).data('product-id');
-        $.ajax({
-            type: "POST", url: "../php/product_detail.php",
-            data: {id: ID},
-            success: function(result){
-                result = $.parseJSON(result);
-                $("#sDescription").append(result.name);
-                $("#sName").append(result.description);
-                $("#labelselect").hidden() = true;
-                $("#detailshow").hidden() = false;
-            }
-        });
+    console.log(ID);
+    $.ajax({
+        type: "POST", url: "../php/product_detail.php",
+        data: {id: ID},
+        success: function(result){
+            result = $.parseJSON(result);
+            $("#sDescription").append(result.name);
+            $("#sName").append(result.description);
+            $("#labelselect").hidden() = true;
+            $("#detailshow").hidden() = false;
+        }
+    });
 }
