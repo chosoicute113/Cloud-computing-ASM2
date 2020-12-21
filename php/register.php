@@ -11,7 +11,7 @@ $db = getDb();
 
 if($db)
 {
-	pg_query("create table if not exists user_registered(
+	pg_query("create table if not exists account(
 	username varchar(50) primary key,
 	password text not null,
 	fullname text not null,
@@ -20,7 +20,7 @@ if($db)
 	age int)");
 	if(isset($username) && isset($password) && isset($fullname))
 	{
-		$success = pg_query("INSERT INTO user_registered VALUES('$username', '$password','$fullname','$phone', '$birthday', $age)");
+		$success = pg_query("INSERT INTO account VALUES('$username', '$password','$fullname','$phone', '$birthday', $age)");
 	}
 }
 echo json_encode(array('success' => $success));
