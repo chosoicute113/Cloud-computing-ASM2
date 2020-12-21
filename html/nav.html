@@ -54,7 +54,8 @@
         </a>
         <a href="" class="changebg"><i class="fas fa-shopping-cart changebg fa-2x"
             style="margin: 5px 10px; color: white;""></i></a>
-        <div class=" dropdown text-center" style="margin-right: 50px;">
+        <a href="">Login</a>
+        <div class=" dropdown text-center" style="margin-right: 50px;" hidden>
             <a class=" nav-link active changebg" style="margin:auto" href="#" id="navbarDropdown" role="button"
               data-bs-toggle="dropdown" aria-expanded="false">
               <i class="far fa-user-circle fa-2x" style="margin: auto auto; color: white;"></i>
@@ -62,10 +63,10 @@
             <ul class="dropdown-menu " style="margin-left: -100px; width: 200px;" aria-labelledby="dropdownMenuButton">
               <div class=" " style="padding: 0px 0px; text-align: center;">
                 <i class=" far fa-user-circle fa-4x" style="padding: 0 25%;"></i>
-                <h5>Tran Ngoc Trai</h5>
+                <h5 id="fullname_box"></h5>
               </div>
               <div class="row " style="width: 80%;margin: 10px auto;">
-                <a id="btn-view" data-product-id='${item.id}' onclick='ViewDetails(this)'
+                <a id="btn-logout" onclick='ViewDetails(this)'
                   class="btn btn-primary">Logout</a>
               </div>
             </ul>
