@@ -160,9 +160,10 @@ function showCategorized_php(){
         data: {CATEGORY:category},
         success: function(result){
             result = $.parseJSON(result);
+            var category_des = result[0].cate_desc; 
             if(result){
                 console.log(result);
-
+                $("#figurineCategory").append(category_des);
                 showCategorized(result);
             }
             else{
