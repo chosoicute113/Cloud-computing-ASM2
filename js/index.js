@@ -147,7 +147,7 @@ function ViewDetails(product){
 }
 ////////////////////////////////// MAIN CATEGORIZED CODE ///////////////////////////
 
-$("#figurineCategory").on('click',transferData("Figurine"));
+$("#menuCategory").on('click',transferData(this.getAttribute('data-product-id')));
 
 function transferData(category){
     console.log(category);
@@ -163,7 +163,7 @@ function showCategorized_php(){
             var category_des = result[0].cate_desc; 
             if(result){
                 console.log(result);
-                $("#factbox").append(category_des);
+                $("#factboxsad").append(category_des);
                 showCategorized(result);
             }
             else{
