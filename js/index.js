@@ -111,15 +111,15 @@ function showProduct(products){
         item.price = numberWithCommas(item.price);
 
         var text = `
-        <div class="card" style="width: 30%;">
+        <div class="card" style="width: 18rem;">
             <img src="${item.img}"class="card-img-top"alt="${item.name}"/>
             <div class="card-body">
-                <h4 class="card-title ">${item.name}</h4>
+                <h3 class="card-title ">${item.name}</h3>
                 <h5 class="card-text" style="color: #66ccff;">$${item.price}</h5>
             </div>
             <div class="card-body">
-                <a id="btn-view" data-product-id='${item.id}'  onclick = 'ViewDetails(this)' class="btn btn-primary stretched-link">View in detail</a>
-                <a id="btn-add" class="btn btn-primary stretched-link">Put to cart</a>
+                <a id="btn-view" data-product-id='${item.id}'  onclick = 'ViewDetails(this)' class="btn btn-primary">View in detail</a>
+                <a id="btn-add" class="btn btn-primary">Put to cart</a>
             </div>
         </div>
         `;
