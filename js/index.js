@@ -133,7 +133,7 @@ function showProduct(products){
             </div>
             <div class="card-body">
                 <a id="btn-view" data-product-id='${item.id}'  onclick = 'ViewDetails(this)' class="btn btn-primary">View in detail</a>
-                <a id="btn-add" class="btn btn-primary">Put to cart</a>
+                <a id="btn-add" data-product-id='${item.id}' onclick = 'addProduct(this)' class="btn btn-primary">Put to cart</a>
             </div>
         </div>
         `;
@@ -218,7 +218,7 @@ function showCategorized(products){
             </div>
             <div class="card-body">
                 <a id="btn-view" data-product-id='${item.id}'  onclick = 'ViewDetails(this)' class="btn btn-primary">View in detail</a>
-                <a id="btn-add" class="btn btn-primary">Put to cart</a>
+                <a id="btn-add" data-product-id='${item.id}' onclick = 'addProduct(this)' class="btn btn-primary">Put to cart</a>
             </div>
         </div>
         `;
@@ -269,7 +269,7 @@ function showSubCategorized(products){
             </div>
             <div class="card-body">
                 <a id="btn-view" data-product-id='${item.id}'  onclick = 'ViewDetails(this)' class="btn btn-primary">View in detail</a>
-                <a id="btn-add" class="btn btn-primary">Put to cart</a>
+                <a id="btn-add" data-product-id='${item.id}' onclick = 'addProduct(this)' class="btn btn-primary">Put to cart</a>
             </div>
         </div>
         `;
@@ -321,7 +321,7 @@ function searchBar(products){
             </div>
             <div class="card-body">
                 <a id="btn-view" data-product-id='${item.id}'  onclick = 'ViewDetails(this)' class="btn btn-primary">View in detail</a>
-                <a id="btn-add" class="btn btn-primary">Put to cart</a>
+                <a id="btn-add" data-product-id='${item.id}' onclick = 'addProduct(this)' class="btn btn-primary">Put to cart</a>
             </div>
         </div>
         `;
