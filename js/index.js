@@ -41,13 +41,13 @@ function Ready() {
 }
 
 
-$("#btn_logout").on('click',function(){
+function logoutAccount(){
     $("#fullname_box").empty();
     localStorage.removeItem("login");
     localStorage.removeItem("name");
     $("#btn_login").show();
     $("#login_indicator").hide();
-});
+};
 
 ///////////////////////////// LOGIN AND REGISTRATION ////////////////////
 function showLogin(e){
