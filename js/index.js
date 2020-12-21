@@ -265,6 +265,7 @@ function showSubCategorized(products){
 
 $(document).on('submit',"#btn_search",function(){
     var search_item = $("#search_bar").val();
+    console.log("Success");
     localStorage.setItem("search_item",search_item);
     location.href="product_category";
 });
@@ -308,8 +309,8 @@ function searchBar(products){
         </div>
         `;
         
-        $("#showCategorized").append(text);
-        localStorage.removeItem("search_item");
+        $("#showAllProduct").append(text);
+
     }
 }
 
