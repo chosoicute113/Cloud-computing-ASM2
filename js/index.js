@@ -163,7 +163,7 @@ function showCategorized_php(){
             var category_des = result[0].cate_desc; 
             if(result){
                 console.log(result);
-                $("#figurineCategory").append(category_des);
+                $("#factbox").append(category_des);
                 showCategorized(result);
             }
             else{
