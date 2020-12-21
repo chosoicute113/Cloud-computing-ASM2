@@ -4,7 +4,7 @@ if (isset($_POST['SUBCATEGORY'])) {
     if ( getDb() ) {
         $subcategory = $_POST['SUBCATEGORY'];
 
-        $query="SELECT PRODUCT.* as cate_desc FROM PRODUCT,SUB_PRODUCT,SUB_CATEGORY,CATEGORY 
+        $query="SELECT PRODUCT.* FROM PRODUCT,SUB_PRODUCT,SUB_CATEGORY 
                     WHERE PRODUCT.id = SUB_PRODUCT.product_id 
                     AND SUB_PRODUCT.sub_id = SUB_CATEGORY.id 
                     AND SUB_CATEGORY.name = '$subcategory'";
