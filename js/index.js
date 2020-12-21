@@ -21,7 +21,7 @@ $("#showCategorized").ready(function(){
 });
 
 $("#detailshow").hide();
-$("#login_indicator").hide();
+
 
 
 
@@ -61,8 +61,9 @@ function showLogin(e){
             console.log(result);
             if(result.success){
                 alert("Login successfully");
-                localStorage.setItem("name",result.fullname)
+                localStorage.setItem("name",result.fullname);
                 localStorage.setItem("login",true);
+                localStorage.setItem("username",result.username);
                 location.href = "home.html"
             }
             else{
@@ -328,5 +329,127 @@ function searchBar(products){
 
     }
 }
+///////////////////////////////////////// CART FUNCTION ////////////////////////////////////
 
+function showSubCategorized_php(){
+    var subCategory = localStorage.getItem("subCategory");
+    $.ajax({
+        type: "POST", url: "../php/product_subcategory.php",
+        data: {SUBCATEGORY:subCategory},
+        success: function(result){
+            result = $.parseJSON(result);
+            if(result){
+                console.log(result);
+                $("#factbox").hide();
+                showSubCategorized(result);
+            }
+            else{
+                return;
+            }
+        }
+    });
+}
+function showSubCategorized(products){
+    $("#showCategorized").empty();
+    
+    for(item of products){
+        item.price = numberWithCommas(item.price);
 
+        var text = `
+        <div class="card" style="width: 18rem;">
+            <img src="${item.img}"class="card-img-top"alt="${item.name}"/>
+            <div class="card-body">
+                <h3 class="card-title ">${item.name}</h3>
+                <h5 class="card-text" style="color: #66ccff;">$${item.price}</h5>
+            </div>
+            <div class="card-body">
+                <a id="btn-view" data-product-id='${item.id}'  onclick = 'ViewDetails(this)' class="btn btn-primary">View in detail</a>
+                <a id="btn-add" data-product-id='${item.id}' onclick = 'addProduct(this)' class="btn btn-primary">Put to cart</a>
+            </div>
+        </div>
+        `;
+        
+        $("#showCategorized").append(text);
+    }
+}
+function addProduct(product){
+
+    console.log(product);
+    if(localStorage.getItem("name"))
+    {
+        var USERNAME= localStorage.getItem("username");
+        var PRODUCT_ID= product.getAttribute('data-product-id');
+        console.log(PRODUCT_ID);
+        $.ajax({
+            type: "POST", url: "../php/addcart.php",
+            data: {username: USERNAME, product_id: PRODUCT_ID},
+            success: function(){
+                console.log("PRODUCT ADDED");
+            }
+        });
+    }
+    
+}
+
+function showCart_php(){
+
+    if(localStorage.getItem("name"))
+    {
+        var USERNAME= localStorage.getItem("username");
+        console.log("GETTING PRODUCT");
+        $.ajax({
+            type: "POST", url: "../php/getcart.php",
+            data: {username: USERNAME},
+            success: function(result){
+                console.log("PRODUCT ADDED");
+                result = $.parseJSON(result);
+                if(result){
+                    showCart(result);
+                }
+                else{
+                    return;
+                }
+            }
+        });
+    }
+    
+}
+
+function showCart(products){
+    $("#cartZone").empty();
+    
+    for(item of products){
+        item.price = numberWithCommas(item.price);
+
+        var text = `
+        <div class="row setBorder" style="width: 100%; background-color: white;margin-top: 5px;">
+        <div class=" col-md-4">
+            <img style="width: 100%; height:100%;"
+                src="${item.img}" alt="${item.name}">
+        </div>
+        <div class="col ">
+            <div class="row" style="padding-bottom:40px; margin: 5px 5px;font-size: 15px;">
+                ${item.name}
+            </div>
+            <div class="row " style="border-top: black solid 1px;">
+                <div class=" col-md-4">
+                    Price
+                </div>
+                <div class=" col-md-4">
+                    $${item.price}
+                </div>
+                <div class=" col-md-4">
+                    <a href="cart.html" type="button" onclick="removeCart(this)"
+                        style="width: 100%; height: 100%;text-align: center; background-color: red;color: white;"
+                        class="">X</a> 
+                </div>
+            </div>
+        </div>
+        `;
+        
+        $("#cartZone").append(text);
+    }
+}
+function removeCart(product){
+
+}
