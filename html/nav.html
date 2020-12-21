@@ -1,3 +1,16 @@
+
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+   integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+ <link href="../css/style.css" rel="stylesheet">
+ <script src="https://kit.fontawesome.com/1d041253eb.js" crossorigin="anonymous"></script>
+
+
+
+
+
+
+
 <nav class="navbar navbar-expand-lg navbar-light bg-primary">
   <div class="container-fluid">
     <a class="navbar-brand changebg" href="home.html"
@@ -59,15 +72,18 @@
               <i class="far fa-user-circle fa-2x" style="margin: auto auto; color: white;"></i>
             </a>
             <ul class="dropdown-menu setBorder" style="margin-left: -100px;" aria-labelledby="dropdownMenuButton">
-              <li class="setBorder container">
+              <li class="setBorder">
+                <div class="container setBorder">
+                </div>
                 <div class="row setBorder" style="align-content: center;width: 100%; padding: 0 100%;"></div>
                 <div><i class="setBorder row far fa-user-circle fa-4x" style="color: blue; align-self: center; width: 100%;margin;: 0 100%"></i></div>
-                <div><h5 class="setBorder row" style="text-align: center; width: 100%; margin;: 0 100%">username</h5></div>
+                <div><h5 class="setBorder row" style="text-align: center; width: 100%; margin: 0 100%">username</h5></div>
                 
                 <div class="row setBorder" style="width: 100%;">
                   <a id="btn-view" data-product-id='${item.id}' onclick='ViewDetails(this)'
                     class="btn btn-primary">Logout</a>
                 </div>
+                </div>                
               </li>
             </ul>
     </div>
@@ -75,3 +91,9 @@
   </div>
   </div>
 </nav>
+
+<script src="../js/jsquery.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+    crossorigin="anonymous"></script>
+  <script src="../js/index.js"></script>
