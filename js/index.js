@@ -44,7 +44,7 @@ function Ready() {
 }
 //////////////////////////// LOAD ACCOUNT ////////////////////////////
 
-$("#NavBar").ready(function{
+$("#NavBar").ready(function(){
     if(localStorage.getItem("login")){
         $("#btn_login").hide();
         $("#login_indicator").show();
