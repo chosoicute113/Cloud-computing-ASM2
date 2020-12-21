@@ -216,7 +216,7 @@ function transferData_subcate(category){
 function showSubCategorized_php(){
     var subCategory = localStorage.getItem("subCategory");
     $.ajax({
-        type: "POST", url: "../php/product_category.php",
+        type: "POST", url: "../php/product_subcategory.php",
         data: {SUBCATEGORY:subCategory},
         success: function(result){
             result = $.parseJSON(result);
