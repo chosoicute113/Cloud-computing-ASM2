@@ -402,7 +402,6 @@ function showCart_php(){
             type: "POST", url: "../php/getcart.php",
             data: {username: USERNAME},
             success: function(result){
-                console.log("PRODUCT ADDED");
                 result = $.parseJSON(result);
                 if(result){
                     console.log(result);
@@ -441,7 +440,7 @@ function showCart(products){
                     $${item.price}
                 </div>
                 <div class=" col-md-4">
-                    <a href="cart.html" type="button" onclick="removeCart(this)"
+                    <a href="cart.html" data-product-id='${item.id}'  type="button" onclick="removeCart(this)"
                         style="width: 100%; height: 100%;text-align: center; background-color: red;color: white;"
                         class="">X</a> 
                 </div>
@@ -453,5 +452,23 @@ function showCart(products){
     }
 }
 function removeCart(product){
-    
+    var username = localStorage.getItem("username");
+    var product_id = product.getAttribute('data-product-id');
+    $.ajax({
+        type: "POST", url: "../php/removecart.php",
+        data: {username: username,
+               product_id: product_id},
+        success: function(result){
+            
+            result = $.parseJSON(result);
+            if(result){
+                console.log("PRODUCT REMOVE");
+            }
+            else{
+                return;
+            }
+        }
+    });
+
+
 }
