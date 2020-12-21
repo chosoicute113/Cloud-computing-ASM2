@@ -6,7 +6,10 @@ $("#showAllProduct").ready(function(){
     if(!localStorage.getItem("search_item")){
         showProduct_php();
     }
-    else searchBar_php();
+    else {
+        searchBar_php();
+        localStorage.removeItem("search_item");
+        }
 });
 $("#showCategorized").ready(function(){
     if(localStorage.getItem("Category")){
