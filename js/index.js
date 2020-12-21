@@ -171,7 +171,7 @@ function showCategorized_php(){
             var category_des = result[0].cate_desc; 
             if(result){
                 console.log(result);
-                $("#factboxsad").append(category_des);
+                $("#factbox").append(category_des);
                 $("#factbox").show();
                 showCategorized(result);
             }
