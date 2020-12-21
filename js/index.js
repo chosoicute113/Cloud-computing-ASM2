@@ -48,11 +48,8 @@ function showLogin(e){
         success: function(result){
             result = $.parseJSON(result);
             if(result.success){
-                alert("Login successfully \n"+
-                      "Full name: " + result.fullname+"\n"+
-                      "Phone: "+result.phone+"\n"+
-                      "Birthdate: "+result.birthday +"\n"+
-                      "Age: "+ result.age);
+                alert("Login successfully");
+                localStorage.setItem("name",result.fullname)
                 localStorage.setItem("login",true);
             }
             else{
