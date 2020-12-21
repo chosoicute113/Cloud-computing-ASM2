@@ -10,7 +10,8 @@ if (isset($_POST['username'])) {
                   AND CART.username ='$username'";
         $result = pg_query($query);
         if($result){
-            echo json_encode($result);
+            $arr = pg_fetch_all($result);
+            echo json_encode($arr);
         }
     };
 }
