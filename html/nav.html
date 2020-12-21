@@ -61,9 +61,18 @@
               <i class="far fa-user-circle fa-2x" style="margin: auto auto; color: white;"></i>
             </a>
             <ul class="dropdown-menu " style="margin-left: -100px;" aria-labelledby="dropdownMenuButton">
-              <li><a class="dropdown-item" href="#">Action</a></li>
-              <li><a class="dropdown-item" href="#">Another action</a></li>
-              <li><a class="dropdown-item" href="#">Something else here</a></li>
+              <li><div class="card" style="width: 100%;">
+                <img src="${item.img}"class="card-img-top"alt="${item.name}"/>
+                <div class="card-body">
+                    <h3 class="card-title ">${item.name}</h3>
+                    <h5 class="card-text" style="color: #66ccff;">$${item.price}</h5>
+                </div>
+                <div class="card-body">
+                    <a id="btn-view" data-product-id='${item.id}'  onclick = 'ViewDetails(this)' class="btn btn-primary">View in detail</a>
+                    <a id="btn-add" class="btn btn-primary">Put to cart</a>
+                </div>
+            </div></li>
+              
             </ul>
     </div>
     </form>

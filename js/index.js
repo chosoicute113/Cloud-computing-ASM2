@@ -53,6 +53,7 @@ function showLogin(e){
                       "Phone: "+result.phone+"\n"+
                       "Birthdate: "+result.birthday +"\n"+
                       "Age: "+ result.age);
+                localStorage.setItem("login",true);
             }
             else{
                 $("#showError").text("There is something wrong! please check your username and password");
