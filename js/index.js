@@ -61,6 +61,7 @@ function showLogin(e){
 
 function showRegistry(e){
     e.preventDefault();
+    console.log("Registering")
     if($("#input_password2").val() == $("#input_password").val()){
         $.ajax({
             type: "POST", url: "../php/register.php",
