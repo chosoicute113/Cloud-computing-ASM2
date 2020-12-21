@@ -79,6 +79,7 @@
   //////////////////////////// LOAD ACCOUNT ////////////////////////////
   $("#NavBar").ready(function(){
     console.log("CHECK");
+    $("#login_indicator").hide();
     if(localStorage.getItem("login") == "true"){
         console.log("GOT IN");
         $("#btn_login").hide();
