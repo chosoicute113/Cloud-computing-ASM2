@@ -148,7 +148,7 @@ function ViewDetails(product){
 }
 ////////////////////////////////// MAIN CATEGORIZED CODE ///////////////////////////
 
-document.getElementById("menuCategory").onclick = transferData(this);
+document.getElementById("menuCategory").onclick = "transferData(this)";
 
 function transferData(category){
     var key = category.getAttribute('data-product-id');
