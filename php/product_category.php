@@ -11,7 +11,6 @@ if (isset($_POST['CATEGORY'])) {
                     AND CATEGORY.name = '$category'";
         $result = pg_query($query);
         if ($result) {
-            $cate_des = pg_result($result, 0, "password");
             echo json_encode($arr);
         }
     }
