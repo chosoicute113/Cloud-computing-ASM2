@@ -2,6 +2,10 @@ $(document).on("submit","#form_register",showRegistry);
 $(document).on("submit","#form_login", showLogin);
 $(".nav-item").ready(Ready);
 $(document).on("DOMContentLoaded", DOMLoaded);
+$("#showAllProduct").ready(showProduct_php);
+$("#showCategorized").ready(showCategorized_php);
+$("#detailshow").hide();
+
 
 
 ////////////////////////// LOAD NAVBAR //////////////////////////////
@@ -68,7 +72,7 @@ function showRegistry(e){
 }
 /////////////////////////////// MAIN PAGE PRODUCT /////////////////////////
 
-$("#showAllProduct").ready(showProduct_php);
+
 
 function showProduct_php(){
     $.ajax({
@@ -118,7 +122,7 @@ function numberWithCommas(x) {
 }
 
 ///////////////////////////////// SHOWING PRODUCT DETAIL /////////////////////
-$("#detailshow").hide();
+
 
 function ViewDetails(product){
     $("#sDescription").empty();
@@ -143,8 +147,6 @@ function ViewDetails(product){
 }
 ////////////////////////////////// MAIN CATEGORIZED CODE ///////////////////////////
 
-$("#showCategorized").ready(showCategorized_php);
-
 function transferData(category){
     console.log(category);
     localStorage.setItem("Category",category)
@@ -158,7 +160,7 @@ function showCategorized_php(){
             result = $.parseJSON(result);
             if(result){
                 console.log(result);
-                $("#factbox").append(result[0].cate_des);
+
                 showCategorized(result);
             }
             else{
