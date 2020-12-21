@@ -270,6 +270,7 @@ function activateBtn(){
     var search_item = $("#search_bar").val();
     console.log("Success");
     localStorage.setItem("search_item",search_item);
+    window.href="product.html";
 };
 
 function searchBar_php(){
