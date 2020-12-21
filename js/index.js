@@ -44,6 +44,7 @@ function Ready() {
 $("#NavBar").ready(function(){
     console.log("CHECK");
     if(localStorage.getItem("login") == "true"){
+        console.log("GOT IN");
         $("#btn_login").hide();
         $("#login_indicator").show();
         $("#fullname_box").append(localStorage.getItem("name"));
