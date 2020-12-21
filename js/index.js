@@ -405,6 +405,7 @@ function showCart_php(){
                 console.log("PRODUCT ADDED");
                 result = $.parseJSON(result);
                 if(result){
+                    console.log(result);
                     showCart(result);
                 }
                 else{
