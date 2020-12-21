@@ -2,10 +2,9 @@ $(document).on("submit","#form_register",showRegistry);
 $(document).on("submit","#form_login", showLogin);
 $(".nav-item").ready(Ready);
 $(document).on("DOMContentLoaded", DOMLoaded);
-$("#showAllProduct").ready(showProduct_php);
-$("#showCategorized").ready(showCategorized_php);
-$("#detailshow").hide();
 
+
+////////////////////////// LOAD NAVBAR //////////////////////////////
 function DOMLoaded() {
     $("#NavBar").load("../html/nav.html");
 }
@@ -19,6 +18,8 @@ function Ready() {
         }
     });
 }
+
+///////////////////////////// LOGIN AND REGISTRATION ////////////////////
 function showLogin(e){
     $("#showError").empty();
     e.preventDefault();
@@ -65,6 +66,9 @@ function showRegistry(e){
         return;
     }
 }
+/////////////////////////////// MAIN PAGE PRODUCT /////////////////////////
+
+$("#showAllProduct").ready(showProduct_php);
 
 function showProduct_php(){
     $.ajax({
@@ -104,6 +108,65 @@ function showProduct(products){
         $("#showAllProduct").append(text);
     }
 }
+
+function numberWithCommas(x) {
+    x = x.toString();
+    var pattern = /(-?\d+)(\d{3})/;
+    while (pattern.test(x))
+        x = x.replace(pattern, "$1,$2");
+    return x;
+}
+
+///////////////////////////////// SHOWING PRODUCT DETAIL /////////////////////
+$("#detailshow").hide();
+
+function ViewDetails(product){
+    $("#sDescription").empty();
+    $("#sName").empty();
+    var ID= product.getAttribute('data-product-id');
+    console.log(ID);
+    $.ajax({
+        type: "POST", url: "../php/product_detail.php",
+        data: {id: ID},
+        success: function(result){
+            result = $.parseJSON(result);
+            $("#sDescription").append(result[0].description);
+            console.log(result);
+            $("#sName").append(result[0].name);
+            console.log(result[0].img);
+            document.getElementById("imgchange").src = result[0].img;
+            
+        }
+    });
+    $("#labelselect").hide();
+    $("#detailshow").show();
+}
+////////////////////////////////// MAIN CATEGORIZED CODE ///////////////////////////
+
+$("#showCategorized").ready(showCategorized_php);
+
+function transferData(category){
+    console.log(category);
+    localStorage.setItem("Category",category)
+}
+function showCategorized_php(){
+    var category = localStorage.getItem("Category");
+    $.ajax({
+        type: "POST", url: "../php/product_category.php",
+        data: {CATEGORY:category},
+        success: function(result){
+            result = $.parseJSON(result);
+            if(result){
+                console.log(result);
+                $("#factbox").append(result[0].cate_des);
+                showCategorized(result);
+            }
+            else{
+                return;
+            }
+        }
+    });
+}
 function showCategorized(products){
     $("#showCategorized").empty();
     
@@ -127,54 +190,6 @@ function showCategorized(products){
         $("#showCategorized").append(text);
     }
 }
-function numberWithCommas(x) {
-    x = x.toString();
-    var pattern = /(-?\d+)(\d{3})/;
-    while (pattern.test(x))
-        x = x.replace(pattern, "$1,$2");
-    return x;
-}
 
-function ViewDetails(product){
-    console.log("FUCK YES");
-    $("#sDescription").empty();
-    $("#sName").empty();
-    var ID= product.getAttribute('data-product-id');
-    console.log(ID);
-    $.ajax({
-        type: "POST", url: "../php/product_detail.php",
-        data: {id: ID},
-        success: function(result){
-            result = $.parseJSON(result);
-            $("#sDescription").append(result[0].description);
-            console.log(result);
-            $("#sName").append(result[0].name);
-            console.log(result[0].img);
-            document.getElementById("imgchange").src = result[0].img;
-            
-        }
-    });
-    $("#labelselect").hide();
-    $("#detailshow").show();
-}
-function showCategorized_php(){
-    var category = localStorage.getItem("Category");
-    $.ajax({
-        type: "POST", url: "../php/product_category.php",
-        data: {CATEGORY:category},
-        success: function(result){
-            result = $.parseJSON(result);
-            if(result){
-                console.log(result);
-                showCategorized(result);
-            }
-            else{
-                return;
-            }
-        }
-    });
-}
-function transferData(category){
-    console.log(category);
-    localStorage.setItem("Category",category)
-}
+
+
