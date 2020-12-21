@@ -158,7 +158,7 @@ function ViewDetails(product){
 function transferData_cate(category){
     var key = category.getAttribute('data-product-id');
     console.log(key);
-    $("#factbox").show();
+
     localStorage.setItem("Category",key)
 }
 function showCategorized_php(){
@@ -172,6 +172,7 @@ function showCategorized_php(){
             if(result){
                 console.log(result);
                 $("#factboxsad").append(category_des);
+                $("#factbox").show();
                 showCategorized(result);
             }
             else{
@@ -208,7 +209,7 @@ function showCategorized(products){
 function transferData_subcate(category){
     var key = category.getAttribute('data-product-id');
     console.log(key);
-    $("#factbox").hide();
+
     localStorage.removeItem("Category");
     localStorage.setItem("subCategory",key)
 }
@@ -222,6 +223,7 @@ function showSubCategorized_php(){
             result = $.parseJSON(result);
             if(result){
                 console.log(result);
+                $("#factbox").hide();
                 showSubCategorized(result);
             }
             else{
