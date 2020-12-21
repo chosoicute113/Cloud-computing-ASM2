@@ -147,6 +147,8 @@ function ViewDetails(product){
 }
 ////////////////////////////////// MAIN CATEGORIZED CODE ///////////////////////////
 
+$(document).on('click',"#figurineCategory",transferData("Figurine"));
+
 function transferData(category){
     console.log(category);
     localStorage.setItem("Category",category)
