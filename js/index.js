@@ -1,9 +1,6 @@
 $(document).on("submit","#form_registor",showRegistry);
 $(document).on("submit","#form_login", showLogin);
 $(".nav-item").ready(Ready);
-$("#fullname_box").ready(function(){
-    $("#fullname_box").append(localStorage.getItem("full"))
-});
 $(document).on("DOMContentLoaded", DOMLoaded);
 $("#showAllProduct").ready(function(){
     if(!localStorage.getItem("search_item")){
@@ -45,6 +42,7 @@ function Ready() {
 //////////////////////////// LOAD ACCOUNT ////////////////////////////
 
 $("#NavBar").ready(function(){
+    console.log("CHECK");
     if(localStorage.getItem("login")){
         $("#btn_login").hide();
         $("#login_indicator").show();
