@@ -3,7 +3,14 @@ $(document).on("submit","#form_login", showLogin);
 $(".nav-item").ready(Ready);
 $(document).on("DOMContentLoaded", DOMLoaded);
 $("#showAllProduct").ready(showProduct_php);
-$("#showCategorized").ready(showCategorized_php);
+$("#showCategorized").ready(function(){
+    if(localStorage.getItem("Category")){
+        showCategorized_php();
+    }
+    else if(localStorage.getItem("subCategory")){
+        showSubCategorized_php();
+    }
+});
 $("#detailshow").hide();
 
 
@@ -202,6 +209,7 @@ function transferData_subcate(category){
     var key = category.getAttribute('data-product-id');
     console.log(key);
     $("#factbox").hide();
+    localStorage.removeItem("Category");
     localStorage.setItem("subCategory",key)
 }
 
