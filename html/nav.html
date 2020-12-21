@@ -54,8 +54,8 @@
         </a>
         <a href="" class="changebg"><i class="fas fa-shopping-cart changebg fa-2x"
             style="margin: 5px 10px; color: white;""></i></a>
-        <a href="" class="setBorder"><h5 style="color: white;margin: 5px 0;">Login</h5></a>
-        <div class=" dropdown text-center" style="margin-right: 50px;" hidden>
+        <a href="" id="btn_login" class=""><h5 style="color: white;margin: 5px 0;">Login</h5></a>
+        <div id="login_indicator" class=" dropdown text-center" style="margin-right: 50px;">
             <a class=" nav-link active changebg" style="margin:auto" href="#" id="navbarDropdown" role="button"
               data-bs-toggle="dropdown" aria-expanded="false">
               <i class="far fa-user-circle fa-2x" style="margin: auto auto; color: white;"></i>
@@ -66,7 +66,7 @@
                 <h5 id="fullname_box"></h5>
               </div>
               <div class="row " style="width: 80%;margin: 10px auto;">
-                <a id="btn-logout" onclick='ViewDetails(this)'
+                <a id="btn_logout" onclick='ViewDetails(this)'
                   class="btn btn-primary">Logout</a>
               </div>
             </ul>

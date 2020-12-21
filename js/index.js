@@ -1,6 +1,9 @@
 $(document).on("submit","#form_registor",showRegistry);
 $(document).on("submit","#form_login", showLogin);
 $(".nav-item").ready(Ready);
+$("#fullname_box").ready(function(){
+    $("#fullname_box").append(localStorage.getItem("full"))
+});
 $(document).on("DOMContentLoaded", DOMLoaded);
 $("#showAllProduct").ready(function(){
     if(!localStorage.getItem("search_item")){
@@ -19,7 +22,9 @@ $("#showCategorized").ready(function(){
         showSubCategorized_php();
     }
 });
+
 $("#detailshow").hide();
+$("#login_indicator").hide();
 
 
 
@@ -37,6 +42,15 @@ function Ready() {
         }
     });
 }
+//////////////////////////// LOAD ACCOUNT ////////////////////////////
+
+$("#NavBar").ready(function{
+    if(localStorage.getItem("login")){
+        $("#btn_login").hide();
+        $("#login_indicator").show();
+        $("#fullname_box").append(localStorage.getItem("name"));
+    }
+});
 
 ///////////////////////////// LOGIN AND REGISTRATION ////////////////////
 function showLogin(e){
