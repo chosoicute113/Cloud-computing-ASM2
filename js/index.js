@@ -51,6 +51,7 @@ function showLogin(e){
                 alert("Login successfully");
                 localStorage.setItem("name",result.fullname)
                 localStorage.setItem("login",true);
+                location.href = "home.html"
             }
             else{
                 $("#showError").text("There is something wrong! please check your username and password");
