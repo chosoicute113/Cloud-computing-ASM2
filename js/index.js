@@ -198,7 +198,7 @@ function showCategorized(products){
 }
 /////////////////////////////// SUB CATEGORY CODE /////////////////////
 
-function transferData_cate(category){
+function transferData_subcate(category){
     var key = category.getAttribute('data-product-id');
     console.log(key);
     $("#factbox").hide();
