@@ -1,5 +1,3 @@
-
-
 <nav class="navbar navbar-expand-lg navbar-light bg-primary">
   <div class="container-fluid">
     <a class="navbar-brand changebg" href="home.html"
@@ -61,15 +59,16 @@
               <i class="far fa-user-circle fa-2x" style="margin: auto auto; color: white;"></i>
             </a>
             <ul class="dropdown-menu setBorder" style="margin-left: -100px;" aria-labelledby="dropdownMenuButton">
-              <li class="setBorder" style="width: max-content;">
-                <div class=" setBorder" style="align-content: center;">
-                <i class="far fa-user-circle fa-4x" style="color: blue; align-self: center;"></i>
-                <h5 class="card-title" style="text-align: center;">username</h5>  
-                <div class="card-body">
-                    <a id="btn-view" data-product-id='${item.id}'  onclick = 'ViewDetails(this)' class="btn btn-primary">Logout</a>
+              <li class="setBorder">
+                <div class="row setBorder" style="align-content: center;"></div>
+                <div><i class="row far fa-user-circle fa-4x" style="color: blue; align-self: center;"></i></div>
+                <div><h5 class="row card-title" style="text-align: center;">username</h5></div>
+                
+                <div class="row">
+                  <a id="btn-view" data-product-id='${item.id}' onclick='ViewDetails(this)'
+                    class="btn btn-primary">Logout</a>
                 </div>
-            </div></li>
-              
+              </li>
             </ul>
     </div>
     </form>
