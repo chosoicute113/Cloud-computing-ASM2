@@ -127,6 +127,7 @@ function numberWithCommas(x) {
 function ViewDetails(product){
     $("#sDescription").empty();
     $("#sName").empty();
+    console.log(product);
     var ID= product.getAttribute('data-product-id');
     console.log(ID);
     $.ajax({
