@@ -47,6 +47,7 @@ function showLogin(e){
         data: $("#form_login").serialize(),
         success: function(result){
             result = $.parseJSON(result);
+            console.log(result);
             if(result.success){
                 alert("Login successfully");
                 localStorage.setItem("name",result.fullname)
