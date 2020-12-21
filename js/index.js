@@ -148,11 +148,12 @@ function ViewDetails(product){
 }
 ////////////////////////////////// MAIN CATEGORIZED CODE ///////////////////////////
 
-$("#menuCategory").on('click',transferData($(this).getAttribute('data-product-id')));
+document.getElementById("menuCategory").onclick = transferData(this);
 
 function transferData(category){
-    console.log(category);
-    localStorage.setItem("Category",category)
+    var key = category.getAttribute('data-product-id');
+    console.log(key);
+    localStorage.setItem("Category",key)
 }
 function showCategorized_php(){
     var category = localStorage.getItem("Category");
