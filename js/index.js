@@ -2,7 +2,12 @@ $(document).on("submit","#form_register",showRegistry);
 $(document).on("submit","#form_login", showLogin);
 $(".nav-item").ready(Ready);
 $(document).on("DOMContentLoaded", DOMLoaded);
-$("#showAllProduct").ready(showProduct_php);
+$("#showAllProduct").ready(function(){
+    if(!localStorage.getItem("search_item")){
+        showProduct_php();
+    }
+    else searchBar_php();
+});
 $("#showCategorized").ready(function(){
     if(localStorage.getItem("Category")){
         showCategorized_php();
@@ -256,5 +261,56 @@ function showSubCategorized(products){
     }
 }
 
+///////////////////////////////////// SEARCH BAR /////////////////////////////////
+
+$(document).on('submit',"#btn_search",function(){
+    var search_item = $("#search_bar").val();
+    localStorage.setItem("search_item",search_item);
+    location.href="product_category";
+});
+
+function searchBar_php(){
+    var search_item = localStorage.getItem("search_item").toLowerCase();
+
+    $.ajax({
+        type: "POST", url: "../php/product_search.php",
+        data: {SEARCH_ITEM:search_item},
+        success: function(result){
+            result = $.parseJSON(result);
+            if(result){
+                console.log(result);
+                showProduct(result);
+                
+            }
+            else{
+                return;
+            }
+        }
+    });
+}
+function searchBar(products){
+    $("#showAllProduct").empty();
+    
+    for(item of products){
+        item.price = numberWithCommas(item.price);
+
+        var text = `
+        <div class="card" style="width: 18rem;">
+            <img src="${item.img}"class="card-img-top"alt="${item.name}"/>
+            <div class="card-body">
+                <h3 class="card-title ">${item.name}</h3>
+                <h5 class="card-text" style="color: #66ccff;">$${item.price}</h5>
+            </div>
+            <div class="card-body">
+                <a id="btn-view" data-product-id='${item.id}'  onclick = 'ViewDetails(this)' class="btn btn-primary">View in detail</a>
+                <a id="btn-add" class="btn btn-primary">Put to cart</a>
+            </div>
+        </div>
+        `;
+        
+        $("#showCategorized").append(text);
+        localStorage.removeItem("search_item");
+    }
+}
 
 
