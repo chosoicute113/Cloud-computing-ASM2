@@ -148,11 +148,10 @@ function ViewDetails(product){
 }
 ////////////////////////////////// MAIN CATEGORIZED CODE ///////////////////////////
 
-document.getElementById("menuCategory").onclick = "transferData(this)";
-
-function transferData(category){
+function transferData_cate(category){
     var key = category.getAttribute('data-product-id');
     console.log(key);
+    $("#factbox").show();
     localStorage.setItem("Category",key)
 }
 function showCategorized_php(){
@@ -175,6 +174,55 @@ function showCategorized_php(){
     });
 }
 function showCategorized(products){
+    $("#showCategorized").empty();
+    
+    for(item of products){
+        item.price = numberWithCommas(item.price);
+
+        var text = `
+        <div class="card" style="width: 18rem;">
+            <img src="${item.img}"class="card-img-top"alt="${item.name}"/>
+            <div class="card-body">
+                <h3 class="card-title ">${item.name}</h3>
+                <h5 class="card-text" style="color: #66ccff;">$${item.price}</h5>
+            </div>
+            <div class="card-body">
+                <a id="btn-view" data-product-id='${item.id}'  onclick = 'ViewDetails(this)' class="btn btn-primary">View in detail</a>
+                <a id="btn-add" class="btn btn-primary">Put to cart</a>
+            </div>
+        </div>
+        `;
+        
+        $("#showCategorized").append(text);
+    }
+}
+/////////////////////////////// SUB CATEGORY CODE /////////////////////
+
+function transferData_cate(category){
+    var key = category.getAttribute('data-product-id');
+    console.log(key);
+    $("#factbox").hide();
+    localStorage.setItem("subCategory",key)
+}
+
+function showSubCategorized_php(){
+    var subCategory = localStorage.getItem("subCategory");
+    $.ajax({
+        type: "POST", url: "../php/product_category.php",
+        data: {SUBCATEGORY:subCategory},
+        success: function(result){
+            result = $.parseJSON(result);
+            if(result){
+                console.log(result);
+                showSubCategorized(result);
+            }
+            else{
+                return;
+            }
+        }
+    });
+}
+function showSubCategorized(products){
     $("#showCategorized").empty();
     
     for(item of products){
