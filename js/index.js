@@ -39,16 +39,14 @@ function Ready() {
         }
     });
 }
-//////////////////////////// LOAD ACCOUNT ////////////////////////////
 
-$("#NavBar").ready(function(){
-    console.log("CHECK");
-    if(localStorage.getItem("login") == "true"){
-        console.log("GOT IN");
-        $("#btn_login").hide();
-        $("#login_indicator").show();
-        $("#fullname_box").append(localStorage.getItem("name"));
-    }
+
+$("#btn_logout").on('click',function(){
+    $("#fullname_box").empty();
+    localStorage.removeItem("login");
+    localStorage.removeItem("name");
+    $("#btn_login").show();
+    $("#login_indicator").hide();
 });
 
 ///////////////////////////// LOGIN AND REGISTRATION ////////////////////
