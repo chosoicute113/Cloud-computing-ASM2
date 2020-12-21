@@ -268,7 +268,7 @@ function activateBtn(){
     console.log("Success");
     localStorage.setItem("search_item",search_item);
     location.href="product_category";
-});
+};
 
 function searchBar_php(){
     var search_item = localStorage.getItem("search_item").toLowerCase();
