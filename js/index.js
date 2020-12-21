@@ -2,6 +2,7 @@ $(document).on("submit","#form_registor",showRegistry);
 $(document).on("submit","#form_login", showLogin);
 $(".nav-item").ready(Ready);
 $(document).on("DOMContentLoaded", DOMLoaded);
+$("#cartZone").ready(showCart_php);
 $("#showAllProduct").ready(function(){
     if(!localStorage.getItem("search_item")){
         showProduct_php();
