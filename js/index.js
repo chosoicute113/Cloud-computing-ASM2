@@ -453,5 +453,5 @@ function showCart(products){
     }
 }
 function removeCart(product){
-
+    
 }
