@@ -263,7 +263,7 @@ function showSubCategorized(products){
 
 ///////////////////////////////////// SEARCH BAR /////////////////////////////////
 
-$(document).on('submit',"#btn_search",function(){
+$("#btn_search").on('submit',function(){
     var search_item = $("#search_bar").val();
     console.log("Success");
     localStorage.setItem("search_item",search_item);
