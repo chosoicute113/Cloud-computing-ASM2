@@ -23,11 +23,6 @@ $("#showCategorized").ready(function(){
 
 $("#detailshow").hide();
 
-//////////////////////// CLEAR LOCALE STORAGE WHEN CLOSE ///////////////////////
-window.onunload = () => {
-    // Clear the local storage
-    window.localStorage.clear();
- }
 
 ////////////////////////// LOAD NAVBAR //////////////////////////////
 function DOMLoaded() {
