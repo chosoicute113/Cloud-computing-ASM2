@@ -26,7 +26,7 @@ $("#detailshow").hide();
 //////////////////////// CLEAR LOCALE STORAGE WHEN CLOSE ///////////////////////
 window.onunload = () => {
     // Clear the local storage
-    window.MyStorage.clear()
+    window.localStorage.clear();
  }
 
 ////////////////////////// LOAD NAVBAR //////////////////////////////
