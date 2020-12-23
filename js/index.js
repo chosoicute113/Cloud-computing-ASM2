@@ -8,9 +8,9 @@ $("#showAllProduct").ready(function(){
         searchBar_php();
         localStorage.removeItem("search_item");
     }
-    else if(localStorage.getItem("Subcategory")){
+    else if(localStorage.getItem("subCategory")){
         showSubCategorized_php();
-        localStorage.removeItem("Subcategory");
+        localStorage.removeItem("subCategory");
         }
     else if(localStorage.getItem("Category")){
         showCategorized_php();
