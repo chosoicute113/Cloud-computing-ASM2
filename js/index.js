@@ -193,36 +193,13 @@ function showCategorized_php(){
                 console.log(result);
                 $("#factbox").append(category_des);
                 $("#factbox").show();
-                showCategorized(result);
+                showProduct(result);
             }
             else{
                 return;
             }
         }
     });
-}
-function showCategorized(products){
-    $("#showCategorized").empty();
-    
-    for(item of products){
-        item.price = numberWithCommas(item.price);
-
-        var text = `
-        <div class="card" style="width: 18rem;">
-            <img src="${item.img}"class="card-img-top"alt="${item.name}"/>
-            <div class="card-body">
-                <h3 class="card-title ">${item.name}</h3>
-                <h5 class="card-text" style="color: #66ccff;">$${item.price}</h5>
-            </div>
-            <div class="card-body">
-                <a id="btn-view" data-product-id='${item.id}'  onclick = 'ViewDetails(this)' class="btn btn-primary">View in detail</a>
-                <a id="btn-add" data-product-id='${item.id}' onclick = 'addProduct(this)' class="btn btn-primary">Put to cart</a>
-            </div>
-        </div>
-        `;
-        
-        $("#showCategorized").append(text);
-    }
 }
 /////////////////////////////// SUB CATEGORY CODE /////////////////////
 
@@ -244,7 +221,7 @@ function showSubCategorized_php(){
             if(result){
                 console.log(result);
                 $("#factbox").hide();
-                showSubCategorized(result);
+                showProduct(result);
             }
             else{
                 return;
@@ -294,36 +271,13 @@ function showSubCategorized_php(){
             if(result){
                 console.log(result);
                 $("#factbox").hide();
-                showSubCategorized(result);
+                showProduct(result);
             }
             else{
                 return;
             }
         }
     });
-}
-function showSubCategorized(products){
-    $("#showCategorized").empty();
-    
-    for(item of products){
-        item.price = numberWithCommas(item.price);
-
-        var text = `
-        <div class="card" style="width: 18rem;">
-            <img src="${item.img}"class="card-img-top"alt="${item.name}"/>
-            <div class="card-body">
-                <h3 class="card-title ">${item.name}</h3>
-                <h5 class="card-text" style="color: #66ccff;">$${item.price}</h5>
-            </div>
-            <div class="card-body">
-                <a id="btn-view" data-product-id='${item.id}'  onclick = 'ViewDetails(this)' class="btn btn-primary">View in detail</a>
-                <a id="btn-add" data-product-id='${item.id}' onclick = 'addProduct(this)' class="btn btn-primary">Put to cart</a>
-            </div>
-        </div>
-        `;
-        
-        $("#showCategorized").append(text);
-    }
 }
 function addProduct(product){
 
