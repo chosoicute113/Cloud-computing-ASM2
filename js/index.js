@@ -10,11 +10,11 @@ $("#showAllProduct").ready(function(){
     }
     else if(localStorage.getItem("subCategory")){
         showSubCategorized_php();
-        ocalStorage.removeItem("subCategory");
+        localStorage.removeItem("subCategory");
         }
     else if(localStorage.getItem("Category")){
         showCategorized_php();
-        ocalStorage.removeItem("Category");
+        localStorage.removeItem("Category");
     }
     else showProduct_php();
 });
