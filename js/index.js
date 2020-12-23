@@ -168,8 +168,15 @@ function ViewDetails(product){
     $("#labelselect").hide();
     $("#detailshow").show();
 }
-////////////////////////////////// MAIN CATEGORIZED CODE ///////////////////////////
 
+
+function transferData_subcate(category){
+    var key = category.getAttribute('data-product-id');
+    console.log(key);
+
+    localStorage.removeItem("Category");
+    localStorage.setItem("subCategory",key)
+}
 function transferData_cate(category){
     var key = category.getAttribute('data-product-id');
     console.log(key);
@@ -177,6 +184,17 @@ function transferData_cate(category){
     localStorage.setItem("Category",key)
     localStorage.removeItem("subCategory");
 }
+function activateBtn(){
+    var search_item = $("#search_bar").val();
+    console.log("Success");
+    localStorage.setItem("search_item",search_item);
+    localStorage.removeItem("subCategory");
+    localStorage.removeItem("Category");
+    window.href="product.html";
+};
+////////////////////////////////// MAIN CATEGORIZED CODE ///////////////////////////
+
+
 function showCategorized_php(){
     var category = localStorage.getItem("Category");
     $.ajax({
@@ -197,16 +215,8 @@ function showCategorized_php(){
         }
     });
 }
+
 /////////////////////////////// SUB CATEGORY CODE /////////////////////
-
-function transferData_subcate(category){
-    var key = category.getAttribute('data-product-id');
-    console.log(key);
-
-    localStorage.removeItem("Category");
-    localStorage.setItem("subCategory",key)
-}
-
 function showSubCategorized_php(){
     var subCategory = localStorage.getItem("subCategory");
     $.ajax({
@@ -228,14 +238,7 @@ function showSubCategorized_php(){
 
 ///////////////////////////////////// SEARCH BAR /////////////////////////////////
 
-function activateBtn(){
-    var search_item = $("#search_bar").val();
-    console.log("Success");
-    localStorage.setItem("search_item",search_item);
-    localStorage.removeItem("subCategory");
-    localStorage.removeItem("Category");
-    window.href="product.html";
-};
+
 
 function searchBar_php(){
     var search_item = localStorage.getItem("search_item").toLowerCase();
