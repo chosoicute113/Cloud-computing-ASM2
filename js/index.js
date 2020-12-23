@@ -10,9 +10,11 @@ $("#showAllProduct").ready(function(){
     }
     else if(localStorage.getItem("subCategory")){
         showSubCategorized_php();
+        ocalStorage.removeItem("subCategory");
         }
     else if(localStorage.getItem("Category")){
         showCategorized_php();
+        ocalStorage.removeItem("Category");
     }
     else showProduct_php();
 });
@@ -175,7 +177,7 @@ function transferData_subcate(category){
     console.log(key);
 
     localStorage.removeItem("Category");
-    localStorage.setItem("subCategory",key)
+    sessionStorage.getItem("subCategory",key)
 }
 function transferData_cate(category){
     var key = category.getAttribute('data-product-id');
