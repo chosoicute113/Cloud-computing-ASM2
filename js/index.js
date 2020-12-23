@@ -11,7 +11,7 @@ $("#showAllProduct").ready(function(){
     else if(localStorage.getItem("Subcategory")){
         showSubCategorized_php();
         }
-    else if(localStorage.getItem("Categiry")){
+    else if(localStorage.getItem("Category")){
         showCategorized_php();
     }
     else showProduct_php();
