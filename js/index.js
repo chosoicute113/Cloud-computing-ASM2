@@ -12,9 +12,9 @@ $("#showAllProduct").ready(function(){
         showSubCategorized_php();
         localStorage.removeItem("Subcategory");
         }
-    else if(localStorage.getItem("Categoryy")){
+    else if(localStorage.getItem("Category")){
         showCategorized_php();
-        localStorage.removeItem("Categoryy");
+        localStorage.removeItem("Category");
     }
     else showProduct_php();
 });
