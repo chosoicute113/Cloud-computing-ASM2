@@ -8,13 +8,13 @@ $("#showAllProduct").ready(function(){
         searchBar_php();
         localStorage.removeItem("search_item");
     }
-    else if(localStorage.getItem("subCategory")){
+    else if(localStorage.getItem("Subcategory")){
         showSubCategorized_php();
-        localStorage.removeItem("subCategory");
+        localStorage.removeItem("Subcategory");
         }
-    else if(localStorage.getItem("Category")){
+    else if(localStorage.getItem("Categoryy")){
         showCategorized_php();
-        localStorage.removeItem("Category");
+        localStorage.removeItem("Categoryy");
     }
     else showProduct_php();
 });
@@ -177,7 +177,7 @@ function transferData_subcate(category){
     console.log(key);
 
     localStorage.removeItem("Category");
-    localStorage.getItem("subCategory",key)
+    localStorage.setItem("subCategory",key)
 }
 function transferData_cate(category){
     var key = category.getAttribute('data-product-id');
