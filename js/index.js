@@ -177,7 +177,7 @@ function transferData_subcate(category){
     console.log(key);
 
     localStorage.removeItem("Category");
-    sessionStorage.getItem("subCategory",key)
+    localStorage.getItem("subCategory",key)
 }
 function transferData_cate(category){
     var key = category.getAttribute('data-product-id');
