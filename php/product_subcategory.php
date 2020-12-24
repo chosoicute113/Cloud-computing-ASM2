@@ -14,5 +14,7 @@ if (isset($_POST['SUBCATEGORY'])) {
             $arr = pg_fetch_all($result);
             echo json_encode($arr);
         }
+
+        
     }
 }
